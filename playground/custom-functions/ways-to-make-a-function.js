@@ -23,7 +23,7 @@
 // })(34);
 
 const Matt = {
-  name: 'Matt Schultz',
+  name: 'M',
   sayHi() {
     console.log('Hey Matt');
     return 'Hey Matt';
