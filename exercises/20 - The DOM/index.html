@@ -1,25 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>The DOM</title>
+    <link rel="stylesheet" href="../../base.css" />
+    <style>
+      img {
+        transition: all 0.8s;
+      }
+      .round {
+        border-radius: 50%;
+        transform: rotate(20deg);
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>The DOM</title>
-  <link rel="stylesheet" href="../../base.css">
-</head>
+  <body>
+    <p class="matt">
+      I am Matt, I <em>love</em> to eat good food and <strong>run.</strong>
+    </p>
+    <img
+      data-name="matt"
+      class="pic cool"
+      src="https://source.unsplash.com/random/500x500"
+    />
+    <div class="items">
+      <div class="item">
+        <p>Hi I'm a item</p>
+        <img
+          class="custom"
+          data-name="bob"
+          data-last="thorn"
+          src="https://source.unsplash.com/random/200x200"
+        />
+        <img
+          data-name="matt"
+          src="https://source.unsplash.com/random/200x200"
+        />
+        <img
+          data-name="kerr"
+          src="https://source.unsplash.com/random/200x200"
+        />
+      </div>
+      <h2 class="item">I am a header!</h2>
 
-<body>
-  <div class="items">
-    <p>Hi I'm a item</p>
-    <div>
-      <h2>Sub Div</h2>
-      <p>Hi I'm a item</p>
-
+      <article class="item">
+        <h3>I am a smaller heading</h3>
+        <p class="pizza">This is how many pizzas I ate 🍕</p>
+      </article>
     </div>
-    <img src="https://source.unsplash.com/random/300x300" />
-    <p>Hi I'm a item</p>
-    <p>Hi I'm a item</p>
-  </div>
-</body>
 
+    <script src="./traversing.js"></script>
+  </body>
 </html>
