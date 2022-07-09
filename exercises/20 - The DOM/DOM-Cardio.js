@@ -39,8 +39,9 @@ createList();
 const cImage = document.createElement('img');
 
 // set the source to an image
-cImage.src = `https://picsum.photos/${250}`;
+cImage.src = `https://picsum.photos/${500}`;
 cImage.width = 250;
+cImage.height = 250;
 cImage.classList.add('cute');
 cImage.alt = 'Cute Puppy!';
 cDiv.insertAdjacentElement('beforeend', cImage);
@@ -54,8 +55,8 @@ cDiv.insertAdjacentElement('beforeend', cImage);
 
 const divHTML = `
 <div>
-    <p>Para one</p>
-    <p>Para two</p>
+    <p>Paragraph one</p>
+    <p>Paragraph two</p>
 </div>
 `;
 
@@ -76,7 +77,7 @@ document.querySelector('p').remove();
 
 function generatePlayerCard(name, age, height) {
   const playerHTML = `<div class="playerCard">
-                    <h2> ${name} ${age}</h2>
+                    <h2> ${name} - ${age}</h2>
                     <p>They are ${height} and ${age} years old. In Dog years, this person would be 
                     ${age * 7}. That would be a tall dog!</p>
                      </div>`;
@@ -112,7 +113,8 @@ const cardsArray = Array.from(cards);
 
 cardsArray.forEach((card) => {
   const button = document.createElement('button');
-  button.innerText = 'Click Me To Delete';
+  button.textContent = '\u2715';
+  button.classList.add('delete');
   button.addEventListener('click', () => {
     card.remove();
   });

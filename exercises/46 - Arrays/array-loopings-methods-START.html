@@ -12,7 +12,19 @@
 
 <body>
   <script>
-    const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
+    const toppings = [
+      'Mushrooms ',
+      'Tomatoes',
+      'Eggs',
+      'Chili',
+      'Lettuce',
+      'Avocado',
+      'Chiles',
+      'Bacon',
+      'Pickles',
+      'Onions',
+      'Cheese',
+    ];
 
     const students = [
       {
@@ -67,32 +79,31 @@
         birthday: 'April 22, 1993',
         names: {
           first: 'Keith',
-          last: 'Buckley'
-        }
+          last: 'Buckley',
+        },
       },
       {
         birthday: 'January 3, 1975',
         names: {
           first: 'Larry',
-          last: 'Heep'
-        }
+          last: 'Heep',
+        },
       },
       {
         birthday: 'February 12, 1944',
         names: {
           first: 'Linda',
-          last: 'Bermeer'
-        }
-      }
+          last: 'Bermeer',
+        },
+      },
     ];
-
 
     const buns = ['egg', 'wonder', 'brioche'];
 
     const meats = {
       beyond: 10,
       beef: 5,
-      pork: 7
+      pork: 7,
     };
 
     const prices = {
@@ -124,11 +135,94 @@
       { type: 'pants', price: 123 },
     ];
 
-
     /*
       Looping Methods
     */
 
+    console.log(toppings);
+
+    function logTopping(topping, index, array) {
+      const nextTopping = array[index + 1];
+      const prevTopping = array[index - 1];
+      prevTopping ? console.log(prevTopping) : console.log('First item');
+      console.log(topping);
+      nextTopping ? console.log(nextTopping) : console.log('Last item');
+      index === array.length - 1
+        ? console.log('Goodbye!')
+        : console.log('Getting next item');
+      console.log(`----`);
+    }
+
+    toppings.forEach(logTopping);
+    console.clear();
+
+    function lastName(name) {
+      return `${name} schultz`;
+    }
+
+    function capitalize(word) {
+      return `${word[0].toUpperCase()}${word.slice(1)}`;
+    }
+
+    const fullNames = ['matt', 'peter', 'will'].map(capitalize).map(lastName);
+    console.log(fullNames);
+
+    const orderTotalsWithTax = orderTotals.map((total) => total * 1.15);
+    console.log(orderTotalsWithTax);
+
+    console.clear();
+
+    const firstNameArray = [];
+    const cleanPeople = people.map((person) => {
+      const birthDay = new Date(person.birthday).getTime();
+      const now = Date.now();
+      const ageInSeconds = now - birthDay;
+      const ageGap = 1000 * 60 * 60 * 24 * 365;
+      const age = Math.floor(ageInSeconds / ageGap);
+      return {
+        age,
+        name: `${person.names.first} ${person.names.last}`,
+      };
+    });
+    console.table(cleanPeople);
+
+    const over40 = cleanPeople.filter((person) => person.age > 70);
+    console.table(over40);
+    console.clear();
+
+    function findByProperty(property, value) {
+      return function isStudent(student) {
+        return student[property] === value;
+      };
+    }
+
+    const studentFind = students.find(findByProperty('last_name', 'Woodage'));
+    console.log(studentFind);
+
+    console.clear();
+
+    function tallyNumbers(tally, currentTotal) {
+      return tally + currentTotal;
+    }
+
+    const allOrders = orderTotals.reduce(tallyNumbers, 0);
+    console.log(allOrders);
+
+    console.clear();
+
+    function inventoryReducer(totals, item) {
+      totals[item.type] = totals[item.type] + 1 || 1;
+      return totals;
+    }
+
+    const inventoryCounts = inventory.reduce(inventoryReducer, {});
+    console.log(inventoryCounts);
+
+    const totalInventoryPrice = inventory.reduce(
+      (acc, item) => acc + item.price,
+      0
+    );
+    console.log(totalInventoryPrice);
   </script>
 </body>
 

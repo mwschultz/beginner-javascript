@@ -12,15 +12,59 @@
   <script>
     const numbers = [2, 34, 3, 23, 42, 3, 1, 65, 364, 5, 645, 6];
 
-    const name = 'Wes Bos';
+    const name = 'Wes Bos 😄🥸';
+
+    const matt = {
+      name: 'Matt',
+      age: 36,
+      height: 'tall',
+    };
 
     // For
+    for (let i = 50; i <= 90; i += 2) {
+      console.log(i);
+    }
 
+    for (let i = 0; i < numbers.length; i++) {
+      console.log(numbers[i]);
+    }
     // For of
+    for (const letter of name) {
+      console.log(letter);
+    }
 
-    // For in
+    // For in -- used for looping over keys of object
 
+    const baseHumanStats = {
+      feet: 2,
+      arms: 2,
+      eyes: 2,
+      head: 1,
+    };
+
+    function Human(name) {
+      this.name = name;
+    }
+    /*
+            console.clear();
+            Human.prototype = baseHumanStats;
+        
+            const wes2 = new Human('wes');
+            console.log(Object.entries(wes2));
+            for (const prop in wes2) {
+              console.log(prop);
+            }
+            */
     // While Loop
+    let cool = true;
+    let i = 0;
+    while (cool) {
+      console.log('D');
+      i++;
+      if (i > 150) {
+        cool = false;
+      }
+    }
   </script>
 </body>
 
