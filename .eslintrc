@@ -3,6 +3,16 @@
         "wesbos"
     ],
     "rules": {
-        "no-plusplus": "off"
+        "no-plusplus": "off",
+        "no-restricted-globals": 1,
+        "no-unused-expressions": [
+            2,
+            {
+                "allowShortCircuit": true,
+                "allowTernary": true
+            }
+        ],
+        "no-empty": "off",
+        "no-useless-return": "off",
     }
 }

@@ -1,19 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>If Statements</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>If Statements</title>
-  <link rel="stylesheet" href="../base.css">
-</head>
+  <body>
+    <script>
+      const age = 100;
+      if (10 > 2) {
+        console.log('Yep');
+      } else if (11 > 10) {
+        console.log('D');
+      }
 
-<body>
-  <script>
-    if (10 > 2) {
-      console.log('Yep');
-    }
-  </script>
-</body>
+      function slugify(a, lowercase) {
+        if (lowercase) {
+          return a.replace(/\s/g, '-').toLowerCase();
+        }
+        return a.replace(/\s/g, '-');
+      }
 
+      const name = 'wes';
+      const last = 'boss';
+      if (name === 'wes' && last === 'boss') {
+        console.log('Coool name');
+      }
+
+      if ('awesome'.includes(name)) {
+        console.log('Hi');
+      }
+
+      const dog = '0';
+
+      if (dog) {
+        console.log('Yes');
+      } else {
+        console.log('NOPE!');
+      }
+
+      console.clear();
+
+      const count = 1;
+
+      const word = count === 1 ? 'item' : 'items';
+      const sentence = `You have ${count} ${word} in your cart`;
+      console.log(sentence);
+
+      function showAdminPanel() {
+        console.log('OK!');
+      }
+      const isAdmin = true;
+      // eslint-disable-next-line no-unused-expressions
+      isAdmin ? showAdminPanel() : null;
+
+      function check1() {
+        console.log('Running check 1');
+        return true;
+      }
+
+      function check2() {
+        console.log('Running check 2');
+        return false;
+      }
+
+      function check3() {
+        console.log('Running check 3');
+        return true;
+      }
+      if (check1() && check2() && check3()) {
+        console.log('All checks passed');
+      } else {
+        console.log('Some checks failed');
+      }
+
+      isAdmin && showAdminPanel();
+
+      if (isAdmin) showAdminPanel();
+    </script>
+  </body>
 </html>

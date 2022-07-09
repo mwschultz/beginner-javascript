@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Intervals and Timers</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Intervals and Timers</title>
-  <link rel="stylesheet" href="../base.css">
-</head>
+  <body>
+    <script>
+      function buzzer() {
+        console.log('BEEP!');
+      }
 
-<body>
+      function setImmediateInterval(funcToRun, ms) {
+        funcToRun();
+        return setInterval(funcToRun, ms);
+      }
 
-</body>
+      function sayHi() {
+        console.log('Howdy!');
+      }
 
+      function destroy() {
+        document.body.innerHTML = `<p>DESTROYED!</p>`;
+      }
+
+      const timer = setTimeout(destroy, 2000);
+      console.log(timer);
+
+      window.addEventListener('click', () => {
+        console.log('You prevented desctruction!');
+        clearTimeout(timer);
+      });
+
+      const Zman = setInterval(() => {
+        console.log('pool');
+        console.log('Hi');
+      }, 10);
+
+      setTimeout(() => {
+        clearInterval(Zman);
+      }, 3000);
+    </script>
+  </body>
 </html>

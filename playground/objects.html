@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="../base.css">
-</head>
+  <body>
+    <input type="text" name="first" value="john" />
+    <script src="https://unpkg.com/lodash@4.17.21/lodash.js"></script>
+    <script>
+      /* global _ */
+      const person1 = {
+        first: 'Matt',
+        clothing: {
+          shirt: 'red',
+        },
+      };
 
-<body>
-  <script>
+      const person3 = _.cloneDeep(person1);
+      // const person3 = { ...person1 };
+      person3.clothing.shirt = 'green';
+      console.log(person3.clothing);
+      console.log(person1.clothing);
 
-  </script>
-</body>
-
+      const meatInvetory = {
+        bacon: 2,
+      };
+      const vegInventory = {
+        cucumber: 100,
+      };
+      const inventory = { ...meatInvetory, ...vegInventory };
+      console.log(inventory);
+    </script>
+  </body>
 </html>

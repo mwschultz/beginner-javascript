@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Maps</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Maps</title>
-  <link rel="stylesheet" href="../base.css">
-</head>
+  <body>
+    <ul class="prizes"></ul>
+    <script>
+      const person1 = {
+        name: 'Wes',
+        age: 100,
+      };
+      const myMap = new Map();
+      myMap.set('name', 'Joe');
+      myMap.description = 'Famous People';
+      myMap.set(() => {
+        console.log('Hey!');
+      }, 'Best function');
 
-<body>
-  <script>
+      const prizes = new Map();
+      const score = 100;
+      prizes.set(100, 'Bear');
+      prizes.set(200, 'Duck');
+      prizes.set(300, 'Car');
 
-  </script>
-</body>
+      const ul = document.querySelector('.prizes');
 
+      for (const [key, value] of prizes) {
+        const li = `<li>${key} - ${value}</li>`;
+        ul.insertAdjacentHTML('beforeend', li);
+      }
+    </script>
+  </body>
 </html>
