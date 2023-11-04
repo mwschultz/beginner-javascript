@@ -1,9 +1,9 @@
-console.log('Hi');
+const str = 'Rabble';
+const chars = str.split('');
 
-const p = document.querySelector('P');
-
-console.log(p);
-
-const age = '333';
-
-console.log(p, age);
+let re = '';
+for (let i = chars.length - 1; i >= 0; i -= 1) {
+    re = re.concat(chars[i]);
+}
+console.log(re);
+console.log('Rabble');

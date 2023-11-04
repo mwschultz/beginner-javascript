@@ -48,9 +48,7 @@
     // Make a function that creates a range from x to y with Array.from();
 
     function createRange(start, end) {
-      const range = Array.from({ length: end - start + 1 }, function (item, index) {
-        return index + start;
-      });
+      const range = Array.from({ length: end - start + 1 }, (item, index) => index + start);
       return range;
     }
 
@@ -79,7 +77,7 @@
     console.log(buns.join(' or '));
 
     // We have a string "hot dogs,hamburgers,sausages,corn" - use split() to turn it into an array
-    const foodString = "hot dogs,hamburgers,sausages,corn";
+    const foodString = 'hot dogs,hamburgers,sausages,corn';
     console.log(foodString.split(','));
 
     // take the last item off toppings with pop()
@@ -94,7 +92,7 @@
     // add it back in with unshift()
     toppings.unshift(firstItem);
     // Do the last four,but immutable (with spreads and new variables)
-    let newToppings = toppings.slice(0, toppings.length - 1);
+    const newToppings = toppings.slice(0, toppings.length - 1);
     newtoppings = [...newToppings, toppings[toppings.length - 1]];
     console.log(newtoppings);
 
@@ -193,7 +191,7 @@
     console.log(orderTotals.sort(numberSort));
     // Sort the prices with sort()
 
-    const productsSortedByPrice = Object.entries(prices).sort(function (a, b) {
+    const productsSortedByPrice = Object.entries(prices).sort((a, b) => {
       const aPrice = a[1];
       const bPrice = b[1];
       return aPrice - bPrice;
