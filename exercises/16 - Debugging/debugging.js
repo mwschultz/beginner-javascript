@@ -1,3 +1,4 @@
+
 const people = [
   { name: 'Wes', cool: true, country: 'Canada' },
   { name: 'Scott', cool: true, country: 'Merica' },
@@ -6,7 +7,12 @@ const people = [
 
 people.forEach((person, index) => {
   console.log(person.name);
+
+
+
 });
+
+console.table(people);
 
 // console.table(people);
 
@@ -35,13 +41,13 @@ function doALotOfStuff() {
 }
 
 function doctorize(name) {
-  //  console.count(`running Doctorize for ${name}`);
-  return `Dr. ${name}`;
+  console.count();
+  return `Dr.${name} `;
 }
 
 function greet(name) {
   doesntExist();
-  return `Hello ${name}`;
+  return `Hello ${name} `;
 }
 
 function go() {
@@ -54,11 +60,13 @@ function bootstrap() {
   go();
 }
 
+// bootstrap();
+
 const button = document.querySelector('.bigger');
 button.addEventListener('click', (e) => {
   const newFontSize =
     parseFloat(getComputedStyle(e.currentTarget).fontSize) + 1;
-  e.currentTarget.style.fontSize = `${newFontSize}px`;
+  e.currentTarget.style.fontSize = `${newFontSize} px`;
 });
 
 // A Dad joke fetch

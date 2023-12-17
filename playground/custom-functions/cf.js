@@ -1,4 +1,4 @@
-function calculateBill(mealCost, taxRate = 0.13, tipRate = 0.18) {
+function calculateBill(mealCost, taxRate = 0.00, tipRate = 0.18) {
   const total = mealCost + mealCost * taxRate + mealCost * tipRate;
   return total;
 }
@@ -21,3 +21,6 @@ function yell(name = 'Matt') {
 
 const myBillA = calculateBill(100, undefined, 0.2);
 console.log(myBillA);
+
+const test = calculateBill(300, undefined, 0.2);
+console.log(test);

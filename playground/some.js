@@ -7,3 +7,5 @@ for (let i = chars.length - 1; i >= 0; i -= 1) {
 }
 console.log(re);
 console.log('Rabble');
+
+const age = 100;

@@ -2,29 +2,36 @@
 // //   return `Dr ${firstName}`;
 // // }
 
-// // console.log(doctorize('D'));
+// fuction(firstName) {
+//   return `Dr. ${firstName}`;
+// }
 
+// // console.log(doctorize('D'));
+const doctorize = function (firstName) {
+  return `Dr. ${firstName}`;
+}
 // // function doctorize(firstName) {
 // //   return `Dr. ${firstName}`;
 // // }
 
-// const inchToCM = (inches) => inches * 2.54;
+const inchToCM = (inches) => inches * 2.54;
 
-// const add = (a, b = 3) => a + b;
+const add = (a, b = 3) => a + b;
 
-// const makeABaby = (first, last) => ({
-//   name: `${first} ${last}`,
-//   age: 0,
-// });
+const makeABaby = (first, last) => ({
+  name: `${first} ${last}`,
+  age: 0,
+});
 
-// (function (age) {
-//   console.log('Running the anonymous function');
-//   return `You are cool and ${age}`;
-// })(34);
+(function (age) {
+  console.log('Running the anonymous function');
+  return `You are cool and ${age}`;
+})(34);
 
 const Matt = {
-  name: 'M',
+  name: 'Marcos',
   sayHi() {
+    console.log(`Hey ${this.name}`);
     console.log('Hey Matt');
     return 'Hey Matt';
   },
@@ -32,7 +39,7 @@ const Matt = {
     console.log('HEY MATT!');
     return 'HEY MATT!';
   },
-  wisperHi: () => {
+  whisperHi: () => {
     console.log('hiiiii');
   },
 };
@@ -46,3 +53,11 @@ function handleClick() {
 button.addEventListener('click', () => {
   console.log('Yup, anonymous function');
 });
+
+button.addEventListener('click', () => {
+  console.log('Pennix!');
+});
+
+setTimeout(() => {
+  console.log('time to eat!');
+}, 2000);
