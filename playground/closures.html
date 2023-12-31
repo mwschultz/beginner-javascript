@@ -11,6 +11,38 @@
     <script>
       function createGreeting(greeting = '') {
         const myGreet = greeting.toUpperCase();
+
+        return function sayGreeting(name) {
+          return `${myGreet} ${name}`;
+        }
+      }
+
+      const sayHello = createGreeting('hello');
+
+      const sayHey = createGreeting('hey');
+
+
+
+      console.log(sayHello('Matt'));
+      console.log(sayHey('Scott'));
+
+
+      function createGame(gameName) {
+        let score = 0; 
+         return function win() {
+          score++;
+          return `Your game name ${gameName} score is ${score}`;
+        }
+      }
+
+      const hockeyGame = createGame('Hockey');
+      const soccerGame = createGame('Soccer');
+
+
+    </script>
+
+      <!-- function createGreeting(greeting = '') {
+        const myGreet = greeting.toUpperCase();
         return function (name) {
           return `${myGreet} ${name}`;
         };
@@ -33,7 +65,7 @@
         };
       }
 
-      const hockeyGame = createGame('hockeyGame');
-    </script>
+      const hockeyGame = createGame('hockeyGame'); -->
+
   </body>
 </html>

@@ -1,44 +1,43 @@
 const myParagraph = document.createElement('p');
-
-myParagraph.textContent = 'Hello, there I am!';
-
+myParagraph.textContent = 'I am a p!';
 myParagraph.classList.add('special');
-const myImage = document.createElement('img');
-myImage.src = 'https://source.unsplash.com/random/500x500';
-myImage.alt = 'Nice!';
 
+
+const myImage = document.createElement('img');
+myImage.src = 'https://source.unsplash.com/random/200x200';
 const myDiv = document.createElement('div');
 myDiv.classList.add('wrapper');
 
+const heading = document.createElement('h2');
+heading.textContent = 'Cool Things';
+
 myDiv.appendChild(myParagraph);
 myDiv.appendChild(myImage);
+myDiv.insertAdjacentElement('afterbegin', heading);
 document.body.appendChild(myDiv);
 
-const heading = document.createElement('h2');
-heading.textContent = 'Cool things';
 
-myDiv.insertAdjacentElement('beforebegin', heading);
+const unorderedList = document.createElement('ul');
 
-const myList = document.createElement('ul');
+const itemOne = document.createElement('li');
+itemOne.textContent = 'One';
 
-const item1 = document.createElement('li');
-item1.textContent = 'one';
-myList.appendChild(item1);
+const itemTwo = document.createElement('li');
+itemTwo.textContent = 'Two';
 
-const item2 = document.createElement('li');
-item2.textContent = 'two';
-myList.appendChild(item2);
+const itemThree = document.createElement('li');
+itemThree.textContent = 'Three';
 
-const item3 = document.createElement('li');
-item3.textContent = 'three';
-myList.appendChild(item3);
+const itemFour = document.createElement('li');
+itemFour.textContent = 'Four';
 
-const item4 = document.createElement('li');
-item4.textContent = 'four';
-myList.appendChild(item4);
+const itemFive = document.createElement('li');
+itemFive.textContent = 'Five';
 
-const item5 = document.createElement('li');
-item5.textContent = 'five';
-myList.appendChild(item5);
+unorderedList.appendChild(itemThree);
+itemThree.insertAdjacentElement('beforebegin', itemTwo);
+itemThree.insertAdjacentElement('afterend', itemFour);
+itemFour.insertAdjacentElement('afterend', itemFive);
+itemTwo.insertAdjacentElement('beforebegin', itemOne);
 
-myDiv.insertAdjacentElement('afterend', myList);
+document.body.appendChild(unorderedList);
