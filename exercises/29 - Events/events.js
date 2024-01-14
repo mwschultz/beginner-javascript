@@ -1,20 +1,44 @@
+console.log('It works!');
+
+const button = document.querySelector('.butts');
+const cool = document.querySelector('.cool');
+
+function handleClick() {
+  console.log('🐞 Clicked!');
+}
+
+button.addEventListener('click', handleClick);
+cool.addEventListener('click', handleClick);
+
+button.removeEventListener('click', handleClick);
+
 function buyItem() {
-  console.log('Spying an item!');
-}
-const buyButtons = document.querySelectorAll('button.buy');
-
-function callMe(event) {
-  console.log(event.target.dataset.price);
+  console.log('Buy now!');
 }
 
-buyButtons.forEach((element) => {
-  element.addEventListener('click', callMe);
+const buyButtons = document.querySelectorAll('.buy');
+
+function handleBuyButtonClick(event) {
+  console.log('YOU CLICKED THE BUTTON');
+  console.log(event.target);
+  console.log(event.currentTarget);
+  console.log(event.target === event.currentTarget);
+  // event.stopPropagation();
+}
+
+buyButtons.forEach(buyButton => {
+  buyButton.addEventListener('click', handleBuyButtonClick)
 });
 
-const photoEl = document.querySelector('.photo');
+window.addEventListener('click', (event) => {
+  console.log(event.target);
+  console.log('YOU CLICKED THE WINDOW');
+  console.log(event.bubbles);
+});
 
-photoEl.addEventListener('mouseenter', function (e) {
-  console.log(e);
+const photoEl = document.querySelector('.photos');
+
+photoEl.addEventListener('mousemove', function (e) {
   console.log(e.currentTarget);
   console.log(this);
 });

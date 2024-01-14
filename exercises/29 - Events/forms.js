@@ -1,32 +1,43 @@
-const myL = document.querySelector('.wes');
+console.log('It works');
 
-myL.addEventListener('click', (e) => {
-  e.preventDefault();
-  const shouldChange = confirm(
-    'This page might be malicious. Do you want to continue?'
-  );
-  if (shouldChange) {
-    window.location = e.currentTarget.href;
-  } else {
-    console.log(e);
+const wes = document.querySelector('.wes');
+
+wes.addEventListener('click', (event) => {
+
+  const shouldChangePage = confirm('This page may be malicious. Do you wish to proceed?');
+
+  if (!shouldChangePage) {
+    event.preventDefault();
   }
+
+})
+
+const signUpForm = document.querySelector('[name="signup"]');
+
+signUpForm.addEventListener('submit', (event) => {
+
+  // console.log(event.currentTarget.name.value);
+  // console.log(event.currentTarget.email.value);
+  // console.log(event.currentTarget.agree.checked);
+
+  const name = event.currentTarget.name.value;
+
+  if (name.toLowerCase().includes('chad')) {
+    alert('Sorry, bro');
+    event.preventDefault();
+  }
+
 });
 
-const sForm = document.querySelector('[name="signup"]');
-
-sForm.addEventListener('submit', function(e){
-    const name =e.currentTarget.name.value; 
-    if(name.includes('chad')) {
-        alert('Sorry, bro!');
-        e.preventDefault();
-    }
-});
+console.log(signUpForm.name);
 
 function logEvent(event) {
-    console.log(event.type);
-    console.log(event.currentTarget.value);
+  console.log(event.type);
+  console.log(event.currentTarget.value);
 }
-sForm.name.addEventListener('keyup', logEvent );
-sForm.name.addEventListener('keydown', logEvent );
-sForm.name.addEventListener('focus', logEvent );
-sForm.name.addEventListener('blur', logEvent );
+
+signUpForm.name.addEventListener('keyup', logEvent);
+
+signUpForm.name.addEventListener('keydown', logEvent);
+signUpForm.name.addEventListener('focus', logEvent);
+signUpForm.name.addEventListener('blur', logEvent);
