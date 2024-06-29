@@ -1,31 +1,22 @@
 const tabs = document.querySelector('.tabs');
-const tabButtons = tabs.querySelectorAll('[role="tab"]');
-const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
+const tabButtons = tabs.querySelectorAll(('[role="tab"]'));
+const tabPanels = Array.from(tabs.querySelectorAll(['[role="tabpanel"]']));
 
 function handleTabClick(event) {
-  tabPanels.forEach((panel) => {
-    panel.hidden = true;
-  });
+  tabPanels.forEach(pnl => { pnl.hidden = true });
 
-  tabButtons.forEach((button) => {
-    button.setAttribute('aria-selected', false);
-  });
+  tabButtons.forEach(tb => { tb.setAttribute('aria-selected', false) });
 
   event.currentTarget.setAttribute('aria-selected', true);
 
   const { id } = event.currentTarget;
-  // tabs.querySelector(`[aria-labelledby="${id}"]`).hidden = false;
-  const tabPanel = tabPanels.find(
-    (panel) => panel.getAttribute('aria-labelledby') === id
-  );
-  tabPanel.hidden = false;
+
+  const thePanel = tabPanels.find(pn =>
+    pn.getAttribute('aria-labelledby') === id);
+
+
+  thePanel.hidden = false;
+
 }
 
-tabButtons.forEach((button) => {
-  button.addEventListener('click', handleTabClick);
-  console.log('d');
-});
-
-function showAdminPanel() {
-  console.log('OK!');
-}
+tabButtons.forEach(buttons => buttons.addEventListener('click', handleTabClick));

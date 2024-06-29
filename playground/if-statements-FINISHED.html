@@ -38,7 +38,7 @@
     }
 
     function slugify(sentence, lowercase) {
-      let slug = sentence.replace(/\s/g, '-');
+      const slug = sentence.replace(/\s/g, '-');
       if (lowercase) {
         return slug.toLowerCase();
       }
@@ -48,7 +48,7 @@
     const name = 'wes';
     const last = 'bos';
 
-    if (name === 'scott' || (name === 'wes' && last == 'bos')) {
+    if (name === 'scott' || (name === 'wes' && last === 'bos')) {
       console.log('Coool Name!');
     }
 
@@ -57,8 +57,8 @@
       console.log('SUPER COOL AWESOME NAME');
     }
 
-    function nameIsAwesome(name) {
-      return 'awesome'.includes(name);
+    function nameIsAwesome(myN) {
+      return 'awesome'.includes(myN);
     }
 
     if (nameIsAwesome('wes')) {
@@ -73,7 +73,7 @@
       console.log('you dont have a dog');
     }
 
-    let score = {};
+    const score = {};
 
     if (score) {
       console.log('There is a score already');
@@ -96,9 +96,10 @@
 
     console.clear();
 
-    const isCool = true;
+    let isCool;
 
     if (!isCool) {
+      console.log(isCool);
       console.log('You are not cool');
     }
 
@@ -115,8 +116,8 @@
     // 2. what to do if true
     // 3. what to do if false
     const word = count === 1 ? 'item' : 'items';
-    const sentence = `You have ${count} item${count === 1 ? '' : 's'} in your cart`;
-    console.log(sentence);
+    const sent = `You have ${count} item${count === 1 ? '' : 's'} in your cart`;
+    console.log(sent);
 
     function showAdminBar() {
       console.log('Showing admin bar');

@@ -1,47 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Intervals and Timers</title>
-    <link rel="stylesheet" href="../base.css" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
   </head>
-
   <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
     <script>
+
       function buzzer() {
-        console.log('BEEP!');
+        console.log('Buzz!');
       }
-
-      function setImmediateInterval(funcToRun, ms) {
-        funcToRun();
-        return setInterval(funcToRun, ms);
-      }
-
-      function sayHi() {
-        console.log('Howdy!');
-      }
-
-      function destroy() {
-        document.body.innerHTML = `<p>DESTROYED!</p>`;
-      }
-
-      const timer = setTimeout(destroy, 2000);
-      console.log(timer);
-
-      window.addEventListener('click', () => {
-        console.log('You prevented desctruction!');
-        clearTimeout(timer);
-      });
-
-      const Zman = setInterval(() => {
-        console.log('pool');
-        console.log('Hi');
-      }, 10);
-
-      setTimeout(() => {
-        clearInterval(Zman);
-      }, 3000);
+      console.log('Starting');
+      setTimeout(buzzer, 500);
+      console.log('Finishing');
+    
     </script>
   </body>
 </html>
